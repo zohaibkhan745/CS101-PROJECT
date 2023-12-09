@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 double add(){
-cout<<"enter your numbers "<<endl;
+cout<<"enter your numbers "<<endl;//Arithmatic operation 
 int a, b;
 cin>>a>>b;
 return a+b;
