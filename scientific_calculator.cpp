@@ -1,3 +1,4 @@
+//in this code we just make an arithematic operation
 #include<iostream>
 using namespace std;
 double add(){
