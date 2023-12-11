@@ -111,7 +111,7 @@ int main()
    cout<<"enter 3 for multiplication "<<endl;
    cout<<"enter 4 for division "<<endl;
    cout<<"enter 5 for factorial "<<endl;
-   cout<<"enter 6 for exit"<<endl;
+   cout<<"enter 6 for finding trignometric functions"<<endl;
     cin>>operation;
    switch (operation)
    {
