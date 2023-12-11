@@ -111,9 +111,7 @@ int main()
    cout<<"enter 3 for multiplication "<<endl;
    cout<<"enter 4 for division "<<endl;
    cout<<"enter 5 for factorial "<<endl;
-    cout << "Choose a trigonometric function:\n";
-    cout << "6. Sin\n7. Cos\n8. Tan\n9. Cot\n10. Sec\n11. Cosec\n";
-    cout<<"enter 12 for exit"<<endl;
+   cout<<"enter 6 for exit"<<endl;
     cin>>operation;
    switch (operation)
    {
