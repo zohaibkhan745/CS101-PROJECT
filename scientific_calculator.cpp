@@ -1,5 +1,6 @@
 //in this code we just make an arithematic operation
 #include<iostream>
+#include <cmath>
 using namespace std;
 double add(){      // function with the name of "add" to add two numbers.
 cout<<"enter your numbers "<<endl;
@@ -110,11 +111,10 @@ int main()
    cout<<"enter 3 for multiplication "<<endl;
    cout<<"enter 4 for division "<<endl;
    cout<<"enter 5 for factorial "<<endl;
-
+    cout << "Choose a trigonometric function:\n";
     cout << "6. Sin\n7. Cos\n8. Tan\n9. Cot\n10. Sec\n11. Cosec\n";
-        
-   cout<<"enter 12 for exit"<<endl;
-   cin>>operation;
+    cout<<"enter 12 for exit"<<endl;
+    cin>>operation;
    switch (operation)
    {
    case 1:
