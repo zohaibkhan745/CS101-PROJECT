@@ -1,3 +1,4 @@
+
 //in this code we just make an arithematic operation
 #include<iostream>
 #include <cmath>
@@ -112,6 +113,8 @@ int main()
    cout<<"enter 4 for division "<<endl;
    cout<<"enter 5 for factorial "<<endl;
    cout<<"enter 6 for finding trignometric functions"<<endl;
+	      cout << "Choose an operation:\n";
+    cout << "6. Addition\t7. subtraction\t8. multiplication\n9. Division\t10. Factorial\t11. trignometric functions\t";
     cin>>operation;
    switch (operation)
    {
