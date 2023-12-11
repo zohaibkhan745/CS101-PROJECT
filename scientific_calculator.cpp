@@ -1,25 +1,25 @@
 //in this code we just make an arithematic operation
 #include<iostream>
 using namespace std;
-double add(){      // function with the name of "add" to add two numbers
+double add(){      // function with the name of "add" to add two numbers.
 cout<<"enter your numbers "<<endl;
 int a, b;
 cin>>a>>b;
 return a+b;
 }
-double subtract(){
+double subtract(){   //function with the name of subtract to subtract second number from first.
     int a, b;
     cout<<"enter your numbers "<<endl;
     cin>>a>>b;
     return a-b;
 }
-double multiply(){
+double multiply(){  // function with the name of multiply to multiply two numbers
      int a, b;
     cout<<"enter your numbers "<<endl;
     cin>>a>>b;
     return a*b;
 }
-double divide(){
+double divide(){       // funtion with the name of divide to divide two numbers
     double a, b;
     cout<<"enter your numbers "<<endl;
     cin>>a>>b;
@@ -29,13 +29,77 @@ double divide(){
     }
     return a/b;
 }
-int factorial(int n) {
+int factorial(int n) {   // function with the name of factorial to find the factorial of a number
     if (n == 0 || n == 1) {
         return 1;
     } else {
         return n * factorial(n - 1);
     }
 }
+double degToRad(double degree) 
+{
+    return degree * (M_PI / 180.0);
+}
+
+double calculateSin(double angle)
+ {
+    double result = sin(degToRad(angle));
+    return result;
+}
+
+double calculateCos(double angle) 
+{
+    double result = cos(degToRad(angle));
+    return result;
+}
+
+double calculateTan(double angle) 
+{
+    double result = tan(degToRad(angle));
+    return result;
+}
+
+double calculateCot(double angle) 
+{
+    double result = 1.0 / tan(degToRad(angle));
+    if(angle==90)
+    {
+        cout<<"Maths error: Result is undefined\n";
+    }
+    if (isnan(result) || isinf(result)) 
+    {
+        cout << "Maths error: Result is undefined\n";
+        return 0.0;
+    }
+    return result;
+}
+
+double calculateSec(double angle) 
+{
+    double result = 1.0 / cos(degToRad(angle));
+     if(angle==0)
+    {
+        cout<<"Maths error: Result is undefined\n";
+    }
+    if (isnan(result) || isinf(result)) 
+    {
+        cout << "Maths error: Result is undefined\n";
+        return 0.0;
+    }
+    return result;
+}
+
+double calculateCosec(double angle) 
+{
+    double result = 1.0 / sin(degToRad(angle));
+    if (isnan(result) || isinf(result)) 
+    {
+        cout << "Maths error: Result is undefined\n";
+        return 0.0;
+    }
+    return result;
+}
+
 int main()
 {
      int operation;
@@ -46,7 +110,10 @@ int main()
    cout<<"enter 3 for multiplication "<<endl;
    cout<<"enter 4 for division "<<endl;
    cout<<"enter 5 for factorial "<<endl;
-   cout<<"enter 6 for exit"<<endl;
+
+    cout << "6. Sin\n7. Cos\n8. Tan\n9. Cot\n10. Sec\n11. Cosec\n";
+        
+   cout<<"enter 12 for exit"<<endl;
    cin>>operation;
    switch (operation)
    {
@@ -75,7 +142,27 @@ int main()
         cout << "Factorial of " << num << " = " << result << endl;
     }
     break;
+
     case 6:
+            result = calculateSin(angle);
+            break;
+    case 7:
+            result = calculateCos(angle);
+            break;
+   case 8:
+            result = calculateTan(angle);
+            break;
+   case 9:
+            result = calculateCot(angle);
+            break;
+    case 10:
+            result = calculateSec(angle);
+            break;
+    case 11:
+            result = calculateCosec(angle);
+            break;
+       
+    case 12:
     cout<<"existing the calculator";
     break;
    default:
