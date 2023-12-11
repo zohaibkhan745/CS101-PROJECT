@@ -113,16 +113,16 @@ int main()
    switch (operation)
    {
    case 1:
-    cout<<add();
+    cout<<"Result is "<<add();
     break;
    case 2:
-   cout<<subtract();
+   cout<<"Result is "<<subtract();
    break;
    case 3:
-   cout<<multiply();
+   cout<<"Result is "<<multiply();
    break;
    case 4:
-   cout<<divide();
+   cout<<"Result is "<<divide();
    break;
    case 5:
    int num;
