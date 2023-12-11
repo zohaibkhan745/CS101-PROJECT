@@ -107,6 +107,7 @@ int main()
      int operation;
     do{
     cout<<endl;
+     cout << "Choose an operation:\n";
     cout << "1. Addition\t2. subtraction\t3. multiplication\t4. Division\t5. Factorial\t6. trignometric functions\t";
     cin>>operation;
    switch (operation)
@@ -149,7 +150,6 @@ int main()
     cin >> angle;
 
     int choice;
-    cout << "Choose a trigonometric function:\n";
     cout << "6. Sin\t7. Cos\t8. Tan\t9. Cot\t10. Sec\t11. Cosec\t";
     cout << "Enter your choice (1-6): ";
     cin >> choice;
