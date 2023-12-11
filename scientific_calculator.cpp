@@ -151,7 +151,7 @@ int main()
 
     int choice;
     cout << "Choose a trigonometric function:\n";
-    cout << "6. Sin\n7. Cos\n8. Tan\9. Cot\n10. Sec\n11. Cosec\n";
+    cout << "6. Sin\t7. Cos\t8. Tan\t9. Cot\t10. Sec\t11. Cosec\t";
     cout << "Enter your choice (1-6): ";
     cin >> choice;
 
