@@ -1,7 +1,7 @@
 //in this code we just make an arithematic operation
 #include<iostream>
 using namespace std;
-double add(){
+double add(){      // function with the name of "add" to add two numbers
 cout<<"enter your numbers "<<endl;
 int a, b;
 cin>>a>>b;
