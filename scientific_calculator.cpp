@@ -107,7 +107,6 @@ int main()
      int operation;
     do{
     cout<<endl;
-    cout << "Choose an operation:\n";
     cout << "1. Addition\t2. subtraction\t3. multiplication\t4. Division\t5. Factorial\t6. trignometric functions\t";
     cin>>operation;
    switch (operation)
