@@ -138,7 +138,6 @@ int main()
     }
     break;
     case 6:
-    cout<<"existing the calculator";
     break;
    default:
    cout<<"invslid please enter between 0-6";
