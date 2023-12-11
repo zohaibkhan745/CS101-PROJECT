@@ -142,27 +142,7 @@ int main()
         cout << "Factorial of " << num << " = " << result << endl;
     }
     break;
-
     case 6:
-            result = calculateSin(angle);
-            break;
-    case 7:
-            result = calculateCos(angle);
-            break;
-   case 8:
-            result = calculateTan(angle);
-            break;
-   case 9:
-            result = calculateCot(angle);
-            break;
-    case 10:
-            result = calculateSec(angle);
-            break;
-    case 11:
-            result = calculateCosec(angle);
-            break;
-       
-    case 12:
     cout<<"existing the calculator";
     break;
    default:
@@ -171,5 +151,49 @@ int main()
    }}
     
     while(operation !=6);
+        double angle;
+    cout << "Enter an angle in degrees: ";
+    cin >> angle;
+
+    int choice;
+    cout << "Choose a trigonometric function:\n";
+    cout << "6. Sin\n7. Cos\n8. Tan\n9. Cot\n10. Sec\n11. Cosec\n";
+    cout << "Enter your choice (1-6): ";
+    cin >> choice;
+
+    double result;
+    switch (choice) 
+	{
+        case 6:
+            result = calculateSin(angle);
+            break;
+        case 7:
+            result = calculateCos(angle);
+            break;
+        case 8:
+            result = calculateTan(angle);
+            break;
+        case 9:
+            result = calculateCot(angle);
+            break;
+        case 10:
+            result = calculateSec(angle);
+            break;
+        case 11:
+            result = calculateCosec(angle);
+            break;
+        default:
+            cout << "Invalid choice\n";
+            return 1;
+    }
+
+    if (isnan(result) || isinf(result)) 
+	{
+        cout << "Maths error: Result is undefined\n";
+    } 
+	else 
+	{
+        cout << "Result: " << result << "\n";
+    }
     return 0;
 }
