@@ -187,5 +187,23 @@ int main()
 	{
         cout << "Result: " << result << "\n";
     }
+ double x;
+
+    cout << "Enter a positive number x: ";
+    cin >> x;
+
+    // Common logarithm (base 10)
+    double log10_result = log10(x);
+    cout << "log10(x): " << log10_result << endl;
+
+    // Natural logarithm (base e)
+    double ln_result = log(x);
+    cout << "ln(x): " << ln_result << endl;
+
+    // Logarithm with a custom base (e.g., base 2)
+    double custom_base = 2.0;
+    double log2_result = log(x) / log(custom_base);
+    cout << "log2(x): " << log2_result << endl;
+
     return 0;
 }
