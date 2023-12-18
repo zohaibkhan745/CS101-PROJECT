@@ -1,0 +1,60 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+double calculateTrigonometric(double angle, char choice) {
+     // Convert angle from degrees to radians
+
+    double result;
+    switch (choice) {
+        case 's':
+            if (angle >= -1 && angle <= 1) {
+                result = asin(angle);
+            } else {
+                return 0.0; // If the angle is not in the valid range [-1, 1]
+            }
+            break;
+        case 'c':
+            if (angle >= -1 && angle <= 1) {
+                result = acos(angle);
+            } else {
+                return 0.0; // If the angle is not in the valid range [-1, 1]
+            }
+            break;
+        case 't':
+            result = atan(angle);
+            break;
+        default:
+            return 0.0; // If an invalid choice is entered
+    }
+
+    return ((result*180)/M_PI) ; // Convert result from radians to degrees
+}
+
+int main() {
+    double angle;
+    char trigFunction;
+
+    cout << "Enter the value: ";
+    cin >> angle;
+
+    cout << "Choose a trigonometric function: " << endl;
+    cout << "s - Inverse Sine (asin)" << endl;
+    cout << "c - Inverse Cosine (acos)" << endl;
+    cout << "t - Inverse Tangent (atan)" << endl;
+
+    cin >> trigFunction;
+
+    double result = calculateTrigonometric(angle, trigFunction);
+
+    if (result != 0.0) {
+        // result=((result*180)/3.141592654);
+        cout << "Angle: " << angle  << endl;
+        cout << "Result: " << result << " degrees" << endl;
+    } else {
+        cout << "Invalid choice or computation failed." << endl;
+    }
+
+    return 0;
+}
