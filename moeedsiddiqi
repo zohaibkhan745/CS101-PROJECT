@@ -1,7 +1,5 @@
-
-//in this code we just make an arithematic operation
 #include<iostream>
-#include <cmath>
+#include<cmath>
 using namespace std;
 double add(){      // function with the name of "add" to add two numbers.
 cout<<"enter your numbers "<<endl;
@@ -31,6 +29,7 @@ double divide(){       // funtion with the name of divide to divide two numbers
     }
     return a/b;
 }
+
 int factorial(int n) {   // function with the name of factorial to find the factorial of a number
     if (n == 0 || n == 1) {
         return 1;
@@ -38,186 +37,363 @@ int factorial(int n) {   // function with the name of factorial to find the fact
         return n * factorial(n - 1);
     }
 }
+
+double sqrt()
+{
+   double num; 
+    cout << "Enter a number: ";
+    cin >> num;
+    double squareRooot = sqrt(num);
+    double SquareRoot(double num); 
+    return sqrt(num);
+
+}
+double Exp()
+{  
+double base, exponent;
+    cout << "Enter the base: ";
+    cin >> base;
+
+    cout << "Enter the exponent: ";
+    cin >> exponent;
+    
+    return pow(base, exponent);
+    }
+    
+        void solveQuadratic()
+{
+     double a, b, c;
+
+    // Input coefficients from the user
+    cout << "Enter coefficient a: ";
+    cin >> a;
+
+    cout << "Enter coefficient b: ";
+    cin >> b;
+
+    cout << "Enter coefficient c: ";
+    cin >> c;
+    // Calculate the discriminant
+    double discriminant = b * b - 4 * a * c;
+
+    // Check if the discriminant is positive, negative, or zero
+    if (discriminant > 0) 
+    {
+        // Two real and distinct roots
+        double root1 = (-b + sqrt(discriminant)) / (2 * a);
+        double root2 = (-b - sqrt(discriminant)) / (2 * a);
+        cout << "Roots are real and distinct.\n";
+        cout << "Root 1: " << root1 << "\n";
+        cout << "Root 2: " << root2 << "\n";
+    } else if (discriminant == 0) 
+    {
+        // One real root (double root)
+        double root = -b / (2 * a);
+        cout << "Roots are real and equal.\n";
+        cout << "Root: " << root << "\n";
+    } else 
+    {
+        // Complex roots
+        double realPart = -b / (2 * a);
+        double imaginaryPart = sqrt(abs(discriminant)) / (2 * a);
+        cout << "Roots are complex and conjugate.\n";
+        cout << "Root 1: " << realPart << " + " << imaginaryPart << "i\n";
+        cout << "Root 2: " << realPart << " - " << imaginaryPart << "i\n";
+    }
+}
+
 double degToRad(double degree) 
 {
     return degree * (M_PI / 180.0);
 }
 
-double calculateSin(double angle)
+void calculateSin()
  {
+ 	 double angle;
+    cout << "Enter an angle in degrees: ";
+    cin >> angle;
     double result = sin(degToRad(angle));
-    return result;
+    cout<<"Result: "<<result;
 }
 
-double calculateCos(double angle) 
+void calculateCos()
 {
-    double result = cos(degToRad(angle));
-    return result;
+	    double angle;
+    cout << "Enter an angle in degrees: ";
+    cin >> angle;
+ 
+    if(angle==90)
+    {
+        cout<<"Result: 0 ";
+    }
+    else
+    {
+        double result = cos(degToRad(angle));
+    cout<<"Result: "<<result;
+
+    }
+    
 }
 
-double calculateTan(double angle) 
+double calculateTan() 
 {
+	    double angle;
+    cout << "Enter an angle in degrees: ";
+    cin >> angle;
+        if(angle==90)
+    {
+        cout<<"Maths error: Result is undefined\n";
+    }
+    else
+	{
     double result = tan(degToRad(angle));
-    return result;
-}
+    cout<<"Result: "<<result;
+	}
 
-double calculateCot(double angle) 
+}
+double calculateCot() 
 {
+	    double angle;
+    cout << "Enter an angle in degrees: ";
+    cin >> angle;
+
     double result = 1.0 / tan(degToRad(angle));
+    if(angle==90)
+    {
+       cout<< "Maths error: Result is undefined\n";
+    }
+    else if(isnan(result) || isinf(result)) 
+    {
+        cout << "Maths error: Result is undefined\n";
+    }
+    else
+    {
+    	cout<<"Result: "<<result;
+	}
+    
+}
+double calculateSec() 
+{
+	    double angle;
+    cout << "Enter an angle in degrees: ";
+    cin >> angle;
+
+    double result = 1.0 / cos(degToRad(angle));
+    
+   
     if(angle==90)
     {
         cout<<"Maths error: Result is undefined\n";
     }
-    if (isnan(result) || isinf(result)) 
+    else if(isnan(result) || isinf(result)) 
     {
         cout << "Maths error: Result is undefined\n";
-        return 0.0;
     }
-    return result;
+     else
+     {
+     	cout<<"Result: "<<result;
+	 }
+    
 }
-
-double calculateSec(double angle) 
+double calculateCosec() 
 {
-    double result = 1.0 / cos(degToRad(angle));
-     if(angle==0)
-    {
-        cout<<"Maths error: Result is undefined\n";
-    }
-    if (isnan(result) || isinf(result)) 
-    {
-        cout << "Maths error: Result is undefined\n";
-        return 0.0;
-    }
-    return result;
-}
+	    double angle;
+    cout << "Enter an angle in degrees: ";
+    cin >> angle;
 
-double calculateCosec(double angle) 
-{
     double result = 1.0 / sin(degToRad(angle));
     if (isnan(result) || isinf(result)) 
     {
         cout << "Maths error: Result is undefined\n";
-        return 0.0;
     }
-    return result;
+     cout<<"Result: "<<result;
 }
-double calculateNaturalLog(double x)  // Function to calculate natural logarithm (log base e)
+void calculateNaturalLog() {
+    double x;
+    cout << "Enter the value: ";
+    cin >> x;
+
+    cout << "Natural Logarithm of " << x << " is: " <<log(x);
+}
+double calculateCommonLog() {
+	double x;
+    cout << "Enter the value: ";
+    cin >> x;
+    cout << "Common Logarithm of " <<x << " is: " <<log10(x);
+}
+
+// Function to calculate binary logarithm (log base 2)
+double calculateBinaryLog() {
+	double x;
+    cout << "Enter the value: ";
+    cin >> x;
+     cout << "Binary Logarithm of " <<x << " is: " <<log2(x);
+    
+}
+
+void calculateSquare()
  {
-    return log(x);
+ 	 double n;
+     cout << "Enter a number: ";
+    cin >> n;
+    cout << "Square: " <<n * n;
 }
-double calculateCommonLog(double x) // Function to calculate common logarithm (log base 10)
-{
-    return log10(x);
+void calculateCube() {
+    	 	 double n;
+     cout << "Enter a number: ";
+    cin >> n;
+    cout << "Cube: "<<n*n*n;
 }
-double calculateBinaryLog(double x) // Function to calculate binary logarithm (log base 2)
- {
-    return log2(x);
+void calculateSquareRoot() {
+	double n;
+     cout << "Enter a number: ";
+    cin >> n;
+    cout << "Square Root: "<<sqrt(n) <<endl;
 }
+void calculateCubeRoot() {
+		double n;
+     cout << "Enter a number: ";
+    cin >> n;
+    cout << "Cube Root: "<<cbrt(n)<<endl;
+}
+
+// Function to calculate nth root
+void calculateNthRoot() {
+	double num;
+	 int n;
+	 cout << "Enter the value of n for Nth Root: ";
+	 cin >> n;
+	      cout << "Enter a number: ";
+    cin >> num;
+            cout << n << "th Root: " <<  pow(num, 1.0 / n) <<endl;
+}
+
 
 int main()
 {
-     int operation;
-     double angle, result , value ;
-    do{
-    cout<<endl;
-     cout << "Choose an operation:\n";
-    cout << "1. Addition\t2. subtraction\t3. multiplication\t4. Division\t5. Factorial\t6. sin \t7 cos \t8 tan \t9 cot \t10 sec\t11 sec \t12 cosec \t13 log base e \t14 log base 10 \t15 log base 2";
+		cout<<endl;
+     
+    cout<<"               888888     8888      88         8888888    88    88   88        88888888  8888888888   8888888888   888888    "<<endl;
+    cout<<"              8888       888 888    88        88          88    88   88        88    88      88       88      88  88    88   "<<endl;
+    cout<<"              88        88    88    88       88           88    88   88        88    88      88       88      88  8888888     "<<endl;
+    cout<<"              88        88888888    88       88           88    88   88        88888888      88       88      88  88 888       "<<endl;
+	cout<<"              888      888    888   88        88          88    88   88        88    88      88       88      88  88  888     "<<endl; 
+    cout<<"               88888   888     888  88888888   8888888    88888888   88888888  88    88      88       8888888888  88    888   "<<endl;
+    cout<<"______________________________________________________________________________________________________________________________________\n";
+    cout<<"|01|       ADDITION                |02|         SUBTRACTION       |03|     MULTIPLICATION        |04|          DIVISION              |\n";
+    cout<<"|**|-------------------------------|**|---------------------------|**|---------------------------|**|------------------------------- |\n";
+	cout<<"|05|       FACTORIAL               |06|        SQUARE ROOT        |07|       EXPONENT            |08|        QUADRATIC               |\n";
+	cout<<"|**|-------------------------------|**|---------------------------|**|---------------------------|**|--------------------------------|\n";
+	cout<<"|09|        SIN()                  |10|        COSINE()           |11|         TANGENT()         |12|       COTANGENT                |\n";
+	cout<<"|**|-------------------------------|**|---------------------------|**|---------------------------|**|--------------------------------|\n";
+	cout<<"|13|        SECANT()               |14|        COSECANT()         |15|         LOG BASE e        |16|        LOG BASE 10             |\n";
+	cout<<"|**|-------------------------------|**|---------------------------|**|---------------------------|**|--------------------------------|\n";
+	cout<<"|17|       LOG BASE-2              |18|         SQUARE            |19|           CUBE            |20|         SQUARE ROOT            |\n";
+	cout<<"|**|-------------------------------|**|---------------------------|**|---------------------------|**|--------------------------------|\n";
+	cout<<"|21|----------CUBE ROOT------------|22|---------Nth ROOT----------|__|---------------------------|__|--------------------------------|\n";
+	cout<<"|21|_______________________________|22|___________________________|__|___________________________|__|________________________________|\n";         
+        
+	int operation;
+	do{
+	cout<<endl<<endl<< "CHOOSE AN OPERATION: ";
+
+
     cin>>operation;
-   switch (operation)
-   {
+    
+    switch(operation)
+    {
     case 1:
     cout<<"Result is "<<add();
     break;
    case 2:
    cout<<"Result is "<<subtract();
    break;
-   case 3:
+      case 3:
    cout<<"Result is "<<multiply();
    break;
-   case 4:
+   
+      case 4:
    cout<<"Result is "<<divide();
    break;
-   case 5:
+   
+      case 5:
    int num;
    cout << "Enter a non-negative integer: ";
    cin >> num;
-    if (num < 0) 
-	{
+    if (num < 0) {
         
         cout << "Please enter a non-negative integer." <<endl;
-    } 
-	else 
-	{
+    } else {
        
         unsigned long long result = factorial(num);
         cout << "Factorial of " << num << " = " << result << endl;
     }
     break;
-    case 6:
-        	//double angle, result;
-    	    cout << "Enter an angle in degrees: ";
-    	     cin >> angle;
-
-            result = calculateSin(angle);
-            break;
-        case 7:
-        	//double angle, result;
-    	    cout << "Enter an angle in degrees: ";
-    	     cin >> angle;
-
-            result = calculateCos(angle);
-            break;
-        case 8:
-        	//double angle, result;
-    	    cout << "Enter an angle in degrees: ";
-    	     cin >> angle;
-
-            result = calculateTan(angle);
-            break;
-        case 9:
-        	//double angle, result;
-    	    cout << "Enter an angle in degrees: ";
-    	     cin >> angle;
-
-            result = calculateCot(angle);
-            break;
-        case 10:
-        	//double angle, result;
-    	    cout << "Enter an angle in degrees: ";
-    	     cin >> angle;
-
-            result = calculateSec(angle);
+    
+        case 6:
+     cout << sqrt()<<endl;
+     break;
+    case 7:
+    cout <<Exp()<<endl;
+    break;
+    case 8:
+     solveQuadratic ();
+     break;
+     
+    case 9:
+    calculateSin();
+    break;
+    
+            case 10:
+            calculateCos();
             break;
         case 11:
-        	//double angle, result;
-    	    cout << "Enter an angle in degrees: ";
-    	     cin >> angle;
+            calculateTan();
+            break;
+                    case 12:
+            calculateCot();
+            break;
+            case 13:
+            calculateSec();
+            break;
+            case 14:
+            calculateCosec();
+            break;
+                    case 15:
+            calculateNaturalLog();
+            break;
+            case 16:
+            calculateCommonLog();
+            break;
+        case 17:
+             calculateBinaryLog();
+            break;
+            
+                case 18:
+             calculateSquare();
+            break;
+        case 19:
+        calculateCube();
+            break;
+            
+                    case 20:
+            calculateSquareRoot();
+            break;
+                    case 21:
+            calculateCubeRoot();
+            break;
+            
+            case 22:
+            	calculateNthRoot();
+            	  break;
+   
+    default:
+   cout<<"invalid number!";
+    break;
+	}
+	
+	
+	}while(operation !=0);
 
-            result = calculateCosec(angle);
-            break;
-         case 12:
-            cout << "Natural Logarithm of " << value << " is: " << calculateNaturalLog(value) <<endl;
-            break;
-        case 13:
-            cout << "Common Logarithm of " << value << " is: " << calculateCommonLog(value) <<endl;
-            break;
-        case 14:
-            cout << "Binary Logarithm of " << value << " is: " << calculateBinaryLog(value) <<endl;
-            break;
-        default:
-            cout << "Invalid choice\n";
-            return 1;
-        }
-   }
- 
+	return 0;
 }
-
-
-    if (isnan(result) || isinf(result)) 
-	{
-        cout << "Maths error: Result is undefined\n";
-    } 
-	else 
-	{
-        cout << "Result: " << result << "\n";
-    }
