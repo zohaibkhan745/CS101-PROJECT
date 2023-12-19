@@ -101,18 +101,31 @@ double calculateCosec(double angle)
     }
     return result;
 }
+double calculateNaturalLog(double x)  // Function to calculate natural logarithm (log base e)
+ {
+    return log(x);
+}
+double calculateCommonLog(double x) // Function to calculate common logarithm (log base 10)
+{
+    return log10(x);
+}
+double calculateBinaryLog(double x) // Function to calculate binary logarithm (log base 2)
+ {
+    return log2(x);
+}
 
 int main()
 {
      int operation;
+     double angle, result , value ;
     do{
     cout<<endl;
      cout << "Choose an operation:\n";
-    cout << "1. Addition\t2. subtraction\t3. multiplication\t4. Division\t5. Factorial\t6. trignometric functions\t";
+    cout << "1. Addition\t2. subtraction\t3. multiplication\t4. Division\t5. Factorial\t6. sin \t7 cos \t8 tan \t9 cot \t10 sec\t11 sec \t12 cosec \t13 log base e \t14 log base 10 \t15 log base 2";
     cin>>operation;
    switch (operation)
    {
-   case 1:
+    case 1:
     cout<<"Result is "<<add();
     break;
    case 2:
@@ -128,56 +141,77 @@ int main()
    int num;
    cout << "Enter a non-negative integer: ";
    cin >> num;
-    if (num < 0) {
+    if (num < 0) 
+	{
         
         cout << "Please enter a non-negative integer." <<endl;
-    } else {
+    } 
+	else 
+	{
        
         unsigned long long result = factorial(num);
         cout << "Factorial of " << num << " = " << result << endl;
     }
     break;
     case 6:
-    break;
-   default:
-   cout<<"invslid please enter between 0-6";
-    break;
-   }}
-    
-    while(operation !=6);
-        double angle;
-    cout << "Enter an angle in degrees: ";
-    cin >> angle;
+        	//double angle, result;
+    	    cout << "Enter an angle in degrees: ";
+    	     cin >> angle;
 
-    int choice;
-    cout << "6. Sin\t7. Cos\t8. Tan\t9. Cot\t10. Sec\t11. Cosec\t";
-    cin >> choice;
-
-    double result;
-    switch (choice) 
-	{
-        case 6:
             result = calculateSin(angle);
             break;
         case 7:
+        	//double angle, result;
+    	    cout << "Enter an angle in degrees: ";
+    	     cin >> angle;
+
             result = calculateCos(angle);
             break;
         case 8:
+        	//double angle, result;
+    	    cout << "Enter an angle in degrees: ";
+    	     cin >> angle;
+
             result = calculateTan(angle);
             break;
         case 9:
+        	//double angle, result;
+    	    cout << "Enter an angle in degrees: ";
+    	     cin >> angle;
+
             result = calculateCot(angle);
             break;
         case 10:
+        	//double angle, result;
+    	    cout << "Enter an angle in degrees: ";
+    	     cin >> angle;
+
             result = calculateSec(angle);
             break;
         case 11:
+        	//double angle, result;
+    	    cout << "Enter an angle in degrees: ";
+    	     cin >> angle;
+
             result = calculateCosec(angle);
+            break;
+         case 12:
+            cout << "Natural Logarithm of " << value << " is: " << calculateNaturalLog(value) <<endl;
+            break;
+        case 13:
+            cout << "Common Logarithm of " << value << " is: " << calculateCommonLog(value) <<endl;
+            break;
+        case 14:
+            cout << "Binary Logarithm of " << value << " is: " << calculateBinaryLog(value) <<endl;
             break;
         default:
             cout << "Invalid choice\n";
             return 1;
-    }
+        }
+   }
+ 
+}
+
 
     if (isnan(result) || isinf(result)) 
 	{
@@ -187,24 +221,3 @@ int main()
 	{
         cout << "Result: " << result << "\n";
     }
-// following program finds logarithm and natural logartihmic of a function 
- double x;
-
-    cout << "Enter a positive number x: ";
-    cin >> x;
-
-    // Common logarithm (base 10)
-    double log10_result = log10(x);
-    cout << "log10(x): " << log10_result << endl;
-
-    // Natural logarithm (base e)
-    double ln_result = log(x);
-    cout << "ln(x): " << ln_result << endl;
-
-    // Logarithm with a custom base (e.g., base 2)
-    double custom_base = 2.0;
-    double log2_result = log(x) / log(custom_base);
-    cout << "log2(x): " << log2_result << endl;
-
-    return 0;
-}
