@@ -51,8 +51,15 @@ double calculateSin(double angle)
 
 double calculateCos(double angle) 
 {
+if(angle == 90)
+{
+return 0;
+}
+else
+{
     double result = cos(degToRad(angle));
     return result;
+}
 }
 
 double calculateTan(double angle) 
