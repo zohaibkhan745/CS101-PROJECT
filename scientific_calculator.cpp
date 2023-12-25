@@ -103,7 +103,7 @@ int main() {
                         case 6:
                             break; // Go back to the main menu
                         case 0:
-                            cout << "Exiting..." << endl;
+                            cout << "Exiting.." << endl;
                             return 0;
                         default:
                             cout << "Invalid choice. Please enter between 0-6" << endl;
